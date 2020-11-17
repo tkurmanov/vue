@@ -14,10 +14,6 @@ html, body {
 
 body {
 	background-color: #F5F5DC;
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-attachment: fixed;
 }
 
 ::-webkit-scrollbar {
@@ -59,8 +55,8 @@ p, a, button {
 }	
 
 .dropdown {
-	right:0; 
-	margin-top: 8px; 
+	right: 0;
+	margin-top: 4px; 
 	min-width: 30px;
 }	
 
@@ -100,10 +96,6 @@ li {
 	margin-top: 4px;
 }	
 
-.license label {
-	font-size: 30px;
-}
-
 .paginate-list {
 	margin: 0 auto;
 	li {
@@ -133,4 +125,7 @@ li {
 		margin: auto;
 		width: 100%;
 	}
+	.nav-item {
+		padding: 4px 4px !important;
+	}	
 }

@@ -3,23 +3,22 @@
 		<header class="responsive">
 			<nav class="w3-bar w3-green">
 				<div class="w3-bar-item w3-left nav-item">
-					<router-link :to="'/'" class="w3-button"><img class="nav-image" src="../assets/img/logo.png"></router-link>
-				</div>
-				
-				<div class="w3-bar-item w3-dropdown-hover nav-item w3-right">
-					<a class="w3-button"><img class="nav-image" src="../assets/img/lang.png"></a>
-					<div class="w3-dropdown-content w3-bar-block w3-card-4 dropdown">
-						<button class="w3-bar-item w3-green lang-btn" v-on:click="switchLangPost(1)">Русский</button>
-						<button class="w3-bar-item w3-green lang-btn" v-on:click="switchLangPost(2)">Қазақша</button>
-						<button class="w3-bar-item w3-green lang-btn" v-on:click="switchLangPost(3)">English</button>
+					<router-link :to="'/'" class="w3-button"><img class="nav-image" src="@/assets/img/logo.png"></router-link>
+				</div>	
+				<div class="w3-dropdown-hover w3-bar-item w3-right nav-item">
+					<button class="w3-button"><img class="nav-image" src="@/assets/img/lang.png"></button>
+					<div class="w3-dropdown-content w3-bar-block dropdown">
+						<button class="w3-bar-item w3-green" v-on:click="switchLang(1)">Русский</button>
+						<button class="w3-bar-item w3-green" v-on:click="switchLang(2)">Қазақша</button>
+						<button class="w3-bar-item w3-green" v-on:click="switchLang(3)">English</button>
 					</div>
 				</div>
 				<div class="w3-bar-item w3-right nav-item">
-					<router-link :to="'/reg'" class="w3-button"><img class="nav-image" src="../assets/img/user.png"></router-link>
+					<router-link :to="'/reg'" class="w3-button"><img class="nav-image" src="@/assets/img/user.png"></router-link>
 				</div>
 			</nav>
 		</header>
-		<div class="w3-container" ref="post">
+		<div class="w3-container">
 			<section class="w3-panel w3-green w3-round w3-border panel" v-if="langIndex === 1">
 				<h1>{{ post.ru.title }}</h1>
 				<p>{{ post.ru.description }}</p>
@@ -62,12 +61,6 @@ export default {
 					category: null, title: null, description: null, body: null
 				},
 			}
-		}
-	},
-	methods: {
-		switchLangPost(n) {
-			this.langIndex = n
-			store.setLangAction(n)
 		}
 	},
 	created() {

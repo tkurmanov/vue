@@ -11,6 +11,15 @@ Vue.use(VueResource);
 Vue.use(VuePaginate);
 Vue.use(VueFormulate);
 
+Vue.mixin({
+	methods: {
+		switchLang: function (n) {
+			this.langIndex = n
+			store.setLangAction(n)
+		},
+	},
+})
+
 export var store = {
 	debug: true,
 	state: {
@@ -22,7 +31,7 @@ export var store = {
 	},
 	setLangAction (x) {
 		this.state.langIndex = x
-	}
+	},
 }
 
 new Vue({
